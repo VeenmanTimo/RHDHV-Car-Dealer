@@ -1,4 +1,6 @@
 using Api.Services;
+using Application;
+using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+
+builder.Services.ConfigureApplication();
+builder.Services.ConfigureInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
