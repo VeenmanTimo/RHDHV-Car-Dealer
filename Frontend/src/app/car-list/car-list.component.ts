@@ -7,14 +7,5 @@ import { CarService } from '../car.service';
   styleUrls: ['./car-list.component.css'],
 })
 export class CarListComponent {
-  
-  constructor(private carService: CarService) {}
-  
-  ngOnInit(): void {
-    this.getCars();
-  }
-
-  getCars(): void {
-    this.carService.getAll();
-  }
+  constructor(public carService: CarService) {}
 }
