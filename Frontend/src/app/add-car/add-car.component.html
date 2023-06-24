@@ -1,0 +1,25 @@
+<h2 class="section-heading">Add a new car</h2>
+<form [formGroup]="applyForm" (submit)="submit()">
+  <label for="model">Model</label>
+  <input id="model" type="text" formControlName="model" />
+
+  <label for="make">Make</label>
+  <input id="make" type="text" formControlName="make" />
+
+  <label for="version">Version</label>
+  <input id="version" type="text" formControlName="version" />
+
+  <label for="year-of-release">Year of release</label>
+  <input id="year-of-release" type="number" formControlName="yearOfRelease" />
+  
+  <label for="price">Price</label>
+  <input id="price" type="text" formControlName="price" />
+  
+  <label for="fuel-consumption">Fuel consumption</label>
+  <input id="fuel-consumption" type="text" formControlName="fuelConsumption" />
+  
+  <label for="annual-maintenance-cost">Annual maintenance cost</label>
+  <input id="annual-maintenance-cost" type="text" formControlName="annualMaintenanceCost" />
+
+  <button type="submit" class="primary">Apply now</button>
+</form>
