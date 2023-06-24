@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option csharp_namespace = "Api";
+
+package car;
+
+service CarEndpoints {
+  rpc GetAll (GetAllRequest) returns (GetAllResponse);
+  rpc GetByGuid (GetByGuidRequest) returns (GetByGuidReponse);
+  rpc CreateCar (CreateCarRequest) returns (CreateCarResponse);
+}
+
+message Car {
+	string guid = 1;
+}
+
+message GetAllRequest {
+
+}
+
+message GetAllResponse
+{
+	repeated Car cars = 1;
+}
+
+message GetByGuidRequest {
+	string guid = 1;
+}
+
+message GetByGuidReponse {
+	Car car = 1;
+}
+
+message CreateCarRequest {
+	string make = 1;
+}
+
+message CreateCarResponse {
+	Car car = 1;
+}
