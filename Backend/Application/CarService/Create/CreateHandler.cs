@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.CarService.Create;
 
-internal class CreateHandler : IRequestHandler<CreateRequest, CarModel>
+public class CreateHandler : IRequestHandler<CreateRequest, CarModel>
 {
     private readonly ICarRepository carRepository;
     private readonly IUnitOfWork unitOfWork;

@@ -3,6 +3,6 @@ using MediatR;
 
 namespace Application.CarService.GetAll;
 
-internal class GetAllRequest : IRequest<List<CarModel>>
+public class GetAllRequest : IRequest<List<CarModel>>
 {
 }

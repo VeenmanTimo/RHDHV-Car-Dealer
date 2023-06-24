@@ -5,11 +5,15 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{546F5F61-06A6-43AA-959D-DDAFD72A26CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{4E0DEEC9-5B25-40D5-B494-735C1CC3C706}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{4E0DEEC9-5B25-40D5-B494-735C1CC3C706}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{B9BE3498-C001-43A7-B416-5D8AF31D78B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{B9BE3498-C001-43A7-B416-5D8AF31D78B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{DBCE7358-B209-4DFB-B9DE-44478D3EB51F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{DBCE7358-B209-4DFB-B9DE-44478D3EB51F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{F5951108-28B6-4912-A72F-6DBFAF52EE83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests.Unit", "Testing\Application.Tests.Unit\Application.Tests.Unit.csproj", "{7962CFFF-7DF1-4630-9DEF-80D92E93B552}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{DBCE7358-B209-4DFB-B9DE-44478D3EB51F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBCE7358-B209-4DFB-B9DE-44478D3EB51F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBCE7358-B209-4DFB-B9DE-44478D3EB51F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7962CFFF-7DF1-4630-9DEF-80D92E93B552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7962CFFF-7DF1-4630-9DEF-80D92E93B552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7962CFFF-7DF1-4630-9DEF-80D92E93B552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7962CFFF-7DF1-4630-9DEF-80D92E93B552}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7962CFFF-7DF1-4630-9DEF-80D92E93B552} = {F5951108-28B6-4912-A72F-6DBFAF52EE83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {689C8B67-12D1-41E1-B37A-1823362823A1}

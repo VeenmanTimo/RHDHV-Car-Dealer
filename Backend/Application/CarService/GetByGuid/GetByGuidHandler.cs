@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.CarService.GetByGuid;
 
-internal class GetByGuidHandler : IRequestHandler<GetByGuidRequest, CarModel?>
+public class GetByGuidHandler : IRequestHandler<GetByGuidRequest, CarModel?>
 {
     private readonly ICarRepository carRepository;
 

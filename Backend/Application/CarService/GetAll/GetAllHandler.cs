@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.CarService.GetAll;
 
-internal class GetAllHandler : IRequestHandler<GetAllRequest, List<CarModel>>
+public class GetAllHandler : IRequestHandler<GetAllRequest, List<CarModel>>
 {
     private readonly ICarRepository carRepository;
 
