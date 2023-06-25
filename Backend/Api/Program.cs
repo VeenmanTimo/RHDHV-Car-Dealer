@@ -24,6 +24,8 @@ builder.Services.AddCors(options =>
                           policy.AllowCredentials();
                           policy.AllowAnyHeader();
                           policy.AllowAnyMethod();
+                          // Required for correct error messages on the frontend
+                          policy.WithExposedHeaders("Grpc-Status", "Grpc-Message", "Grpc-Encoding", "Grpc-Accept-Encoding", "x-grpc-test-echo-initial", "x-grpc-test-echo-trailing-bin");
                       });
 });
 #endif

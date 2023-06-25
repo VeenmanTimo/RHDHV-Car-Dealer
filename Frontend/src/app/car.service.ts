@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CarEndpointsClient } from './generated/car_pb_service';
+import { CarEndpointsClient, ServiceError } from './generated/car_pb_service';
 import {
   Car,
   CreateCarRequest,
@@ -21,6 +21,8 @@ export class CarService {
 
   cars: Car[] = [];
 
+  createError: ServiceError | undefined;
+
   getAll(): void {
     const request = new GetAllRequest();
     this.client.getAll(request, (error, response: GetAllResponse | null) => {
@@ -31,11 +33,13 @@ export class CarService {
   }
 
   create(request: CreateCarRequest): void {
+    this.createError = undefined;
+
     this.client.createCar(
       request,
       (error, response: CreateCarResponse | null) => {
-        console.log('Error: ' + error);
-        console.log(response);
+        if (error) this.createError = error;
+        if (response) console.log(response);
         let car = response?.getCar();
         if (car) this.cars.push(car);
       }

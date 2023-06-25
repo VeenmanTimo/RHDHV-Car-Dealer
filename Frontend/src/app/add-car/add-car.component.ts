@@ -10,7 +10,7 @@ import { CarService } from '../car.service';
   styleUrls: ['./add-car.component.css'],
 })
 export class AddCarComponent {
-  constructor(private carService: CarService) {}
+  constructor(public carService: CarService) {}
 
   applyForm = new FormGroup({
     model: new FormControl(''),
@@ -35,6 +35,5 @@ export class AddCarComponent {
     request.setAnnualMaintenanceCost(+(values.annualMaintenanceCost ?? ''));
 
     this.carService.create(request);
-    console.log(request);
   }
 }
