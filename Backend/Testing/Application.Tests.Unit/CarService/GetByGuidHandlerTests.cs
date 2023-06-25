@@ -2,6 +2,7 @@
 using Application.Repositories;
 using Domain;
 using FluentAssertions;
+using Grpc.Core;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using Xunit;
@@ -41,7 +42,7 @@ public class GetByGuidHandlerTests
 
         var act = async () => await sut.Handle(request, CancellationToken.None);
 
-        await act.Should().ThrowAsync<Exception>().WithMessage("Car not found");
+        await act.Should().ThrowAsync<RpcException>();
     }
 
     [Fact]

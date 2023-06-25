@@ -1,5 +1,6 @@
 ﻿using Application.Repositories;
 using Domain;
+using Grpc.Core;
 using MediatR;
 
 namespace Application.CarService.GetByGuid;
@@ -17,7 +18,7 @@ public class GetByGuidHandler : IRequestHandler<GetByGuidRequest, CarModel?>
     {
         var result = await carRepository.GetByGuidAsync(request.Guid, cancellationToken);
         if (result == null)
-            throw new Exception("Car not found");
+            throw new RpcException(new Status(StatusCode.NotFound, "Entity cannot be found"));
 
         return result;
     }
