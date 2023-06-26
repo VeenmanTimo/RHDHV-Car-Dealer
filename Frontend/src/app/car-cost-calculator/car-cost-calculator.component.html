@@ -35,7 +35,7 @@
     </form>
     <div class="col-9">
       <div class="row">
-        <div class="col-3" *ngFor="let breakDown of sortedCarCosts">
+        <div class="col-4 my-2" *ngFor="let breakDown of sortedCarCosts">
           <app-car-cost-card [costBreakdown]="breakDown" />
         </div>
       </div>
