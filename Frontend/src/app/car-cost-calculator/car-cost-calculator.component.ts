@@ -15,6 +15,8 @@ export class CarCostCalculatorComponent {
       this.carList = value;
       this.sort();
     });
+    this.carList = carService.carList;
+    this.sort();
   }
 
   carList: Car[] = [];

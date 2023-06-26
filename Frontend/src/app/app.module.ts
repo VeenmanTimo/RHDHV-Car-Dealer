@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarCardComponent } from './car-card/car-card.component';
 import { CarCostCalculatorComponent } from './car-cost-calculator/car-cost-calculator.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { CarCostCalculatorComponent } from './car-cost-calculator/car-cost-calcu
     CarListComponent,
     AddCarComponent,
     CarCardComponent,
-    CarCostCalculatorComponent,    
+    CarCostCalculatorComponent,
+    HomePageComponent,    
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,6 +14,8 @@ export class CarListComponent {
       this.allCars = value;
       this.search();
     })
+    this.allCars = carService.carList;
+    this.search();
   }
 
   allCars: Car[] = [];

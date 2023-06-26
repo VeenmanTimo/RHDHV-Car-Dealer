@@ -1,11 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-3">
-      <app-add-car />
-    </div>
-    <div class="col-9">
-      <app-car-list />
-      <app-car-cost-calculator />
-    </div>
+<nav class="bg-secondary">
+  <div class="button btn btn-primary">
+    <a class="link-dark" routerLink="/home">Car list</a>
   </div>
-</div>
+  <div class="button btn btn-primary">
+    <a class="link-dark" routerLink="/calculator">Price calculator</a>
+  </div>
+</nav>
+<router-outlet></router-outlet>
