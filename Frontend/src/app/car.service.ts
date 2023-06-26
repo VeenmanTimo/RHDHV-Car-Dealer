@@ -28,8 +28,7 @@ export class CarService {
   getAll(): void {
     const request = new GetAllRequest();
     this.client.getAll(request, (error, response: GetAllResponse | null) => {
-      console.log('Error: ' + error);
-      console.log(response?.getCarsList());
+      if (error) console.log(error);
       this.carList = response?.getCarsList() ?? [];
       this.cars.next(this.carList);
     });

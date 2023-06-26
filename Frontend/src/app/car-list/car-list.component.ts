@@ -25,7 +25,6 @@ export class CarListComponent {
 
   search() {
     var filter = this.searchForm.value.input?.toLocaleLowerCase();
-    console.log(filter);
     if (filter && filter != '') {
       this.filteredCars = this.allCars.filter(
         (car) =>
