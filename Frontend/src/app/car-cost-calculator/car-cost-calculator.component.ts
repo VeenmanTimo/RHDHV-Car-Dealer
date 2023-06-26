@@ -39,7 +39,7 @@ export class CarCostCalculatorComponent {
       const totalMaintenanceCost = car.getAnnualMaintenanceCost() * years;
 
       const totalFuelCost =
-        montlyDistance * 12 * years * car.getFuelComsumption() * priceOfFuel;
+        (montlyDistance * 12 * years * priceOfFuel) / car.getFuelComsumption();
 
       const totalCost = car.getPrice() + totalMaintenanceCost + totalFuelCost;
 

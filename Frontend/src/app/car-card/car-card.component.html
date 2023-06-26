@@ -5,39 +5,12 @@
   />
   <div class="card-body">
     <h5 class="card-title">{{ car?.getModel() }} {{ car?.getMake() }}</h5>
-    <table class="card-text">
-      <tbody>
-        <tr>
-          <td>Version</td>
-          <td>
-            {{ car?.getVersion() }}
-          </td>
-        </tr>
-        <tr>
-          <td>Year</td>
-          <td>
-            {{ car?.getYearOfRelease() }}
-          </td>
-        </tr>
-        <tr>
-          <td>Price</td>
-          <td>
-            {{ car?.getPrice() }}
-          </td>
-        </tr>
-        <tr>
-          <td>Consumption</td>
-          <td>
-            {{ car?.getFuelComsumption() }}
-          </td>
-        </tr>
-        <tr>
-          <td>Maintenace cost</td>
-          <td>
-            {{ car?.getAnnualMaintenanceCost() }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <h6>{{ car?.getVersion() }}, {{ car?.getYearOfRelease() }}</h6>
+    <p>€ {{ car?.getPrice() | number : "1.2-2" }}</p>
+    <p>
+      Yearly maintenance <br />€
+      {{ car?.getAnnualMaintenanceCost() | number : "1.2-2" }}
+    </p>
+    <p>Consumption <br />{{ car?.getFuelComsumption() }} (km/L)</p>
   </div>
 </div>
