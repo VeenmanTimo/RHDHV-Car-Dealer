@@ -13,14 +13,15 @@ builder.Services.AddGrpc();
 builder.Services.ConfigureApplication();
 builder.Services.ConfigureInfrastructure(builder.Configuration);
 
-#if DEBUG
 var allowLocalhost = "_allowLocalhost";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: allowLocalhost,
                       policy =>
                       {
+#if DEBUG
                           policy.WithOrigins("http://localhost:4200", "https://localhost:4200");
+#endif
                           policy.AllowCredentials();
                           policy.AllowAnyHeader();
                           policy.AllowAnyMethod();
@@ -28,7 +29,6 @@ builder.Services.AddCors(options =>
                           policy.WithExposedHeaders("Grpc-Status", "Grpc-Message", "Grpc-Encoding", "Grpc-Accept-Encoding", "x-grpc-test-echo-initial", "x-grpc-test-echo-trailing-bin");
                       });
 });
-#endif
 
 var app = builder.Build();
 
@@ -40,6 +40,9 @@ app.MapGet("/", () => "Communication with gRPC endpoints must be made through a 
 #if DEBUG
 app.UseCors(allowLocalhost);
 app.UseHttpsRedirection();
+
+DatabaseFunctions.ApplyMigrations(app.Services.CreateScope());
+DatabaseFunctions.AddDefaultData(app.Services.CreateScope());
 #endif
 
 app.Run();
