@@ -1,5 +1,5 @@
 // package: car
-// file: Backend/Api/Protos/car.proto
+// file: car.proto
 
 import * as jspb from "google-protobuf";
 

@@ -1,7 +1,7 @@
 // package: car
-// file: Backend/Api/Protos/car.proto
+// file: car.proto
 
-import * as Backend_Api_Protos_car_pb from "./car_pb";
+import * as car_pb from "./car_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type CarEndpointsGetAll = {
@@ -9,8 +9,8 @@ type CarEndpointsGetAll = {
   readonly service: typeof CarEndpoints;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof Backend_Api_Protos_car_pb.GetAllRequest;
-  readonly responseType: typeof Backend_Api_Protos_car_pb.GetAllResponse;
+  readonly requestType: typeof car_pb.GetAllRequest;
+  readonly responseType: typeof car_pb.GetAllResponse;
 };
 
 type CarEndpointsGetByGuid = {
@@ -18,8 +18,8 @@ type CarEndpointsGetByGuid = {
   readonly service: typeof CarEndpoints;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof Backend_Api_Protos_car_pb.GetByGuidRequest;
-  readonly responseType: typeof Backend_Api_Protos_car_pb.GetByGuidReponse;
+  readonly requestType: typeof car_pb.GetByGuidRequest;
+  readonly responseType: typeof car_pb.GetByGuidReponse;
 };
 
 type CarEndpointsCreateCar = {
@@ -27,8 +27,8 @@ type CarEndpointsCreateCar = {
   readonly service: typeof CarEndpoints;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof Backend_Api_Protos_car_pb.CreateCarRequest;
-  readonly responseType: typeof Backend_Api_Protos_car_pb.CreateCarResponse;
+  readonly requestType: typeof car_pb.CreateCarRequest;
+  readonly responseType: typeof car_pb.CreateCarResponse;
 };
 
 export class CarEndpoints {
@@ -71,31 +71,31 @@ export class CarEndpointsClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   getAll(
-    requestMessage: Backend_Api_Protos_car_pb.GetAllRequest,
+    requestMessage: car_pb.GetAllRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: Backend_Api_Protos_car_pb.GetAllResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: car_pb.GetAllResponse|null) => void
   ): UnaryResponse;
   getAll(
-    requestMessage: Backend_Api_Protos_car_pb.GetAllRequest,
-    callback: (error: ServiceError|null, responseMessage: Backend_Api_Protos_car_pb.GetAllResponse|null) => void
+    requestMessage: car_pb.GetAllRequest,
+    callback: (error: ServiceError|null, responseMessage: car_pb.GetAllResponse|null) => void
   ): UnaryResponse;
   getByGuid(
-    requestMessage: Backend_Api_Protos_car_pb.GetByGuidRequest,
+    requestMessage: car_pb.GetByGuidRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: Backend_Api_Protos_car_pb.GetByGuidReponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: car_pb.GetByGuidReponse|null) => void
   ): UnaryResponse;
   getByGuid(
-    requestMessage: Backend_Api_Protos_car_pb.GetByGuidRequest,
-    callback: (error: ServiceError|null, responseMessage: Backend_Api_Protos_car_pb.GetByGuidReponse|null) => void
+    requestMessage: car_pb.GetByGuidRequest,
+    callback: (error: ServiceError|null, responseMessage: car_pb.GetByGuidReponse|null) => void
   ): UnaryResponse;
   createCar(
-    requestMessage: Backend_Api_Protos_car_pb.CreateCarRequest,
+    requestMessage: car_pb.CreateCarRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: Backend_Api_Protos_car_pb.CreateCarResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: car_pb.CreateCarResponse|null) => void
   ): UnaryResponse;
   createCar(
-    requestMessage: Backend_Api_Protos_car_pb.CreateCarRequest,
-    callback: (error: ServiceError|null, responseMessage: Backend_Api_Protos_car_pb.CreateCarResponse|null) => void
+    requestMessage: car_pb.CreateCarRequest,
+    callback: (error: ServiceError|null, responseMessage: car_pb.CreateCarResponse|null) => void
   ): UnaryResponse;
 }
 

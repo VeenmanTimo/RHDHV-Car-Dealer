@@ -1,7 +1,7 @@
 // package: car
-// file: Backend/Api/Protos/car.proto
+// file: car.proto
 
-var Backend_Api_Protos_car_pb = require("./car_pb");
+var car_pb = require("./car_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var CarEndpoints = (function () {
@@ -15,8 +15,8 @@ CarEndpoints.GetAll = {
   service: CarEndpoints,
   requestStream: false,
   responseStream: false,
-  requestType: Backend_Api_Protos_car_pb.GetAllRequest,
-  responseType: Backend_Api_Protos_car_pb.GetAllResponse
+  requestType: car_pb.GetAllRequest,
+  responseType: car_pb.GetAllResponse
 };
 
 CarEndpoints.GetByGuid = {
@@ -24,8 +24,8 @@ CarEndpoints.GetByGuid = {
   service: CarEndpoints,
   requestStream: false,
   responseStream: false,
-  requestType: Backend_Api_Protos_car_pb.GetByGuidRequest,
-  responseType: Backend_Api_Protos_car_pb.GetByGuidReponse
+  requestType: car_pb.GetByGuidRequest,
+  responseType: car_pb.GetByGuidReponse
 };
 
 CarEndpoints.CreateCar = {
@@ -33,8 +33,8 @@ CarEndpoints.CreateCar = {
   service: CarEndpoints,
   requestStream: false,
   responseStream: false,
-  requestType: Backend_Api_Protos_car_pb.CreateCarRequest,
-  responseType: Backend_Api_Protos_car_pb.CreateCarResponse
+  requestType: car_pb.CreateCarRequest,
+  responseType: car_pb.CreateCarResponse
 };
 
 exports.CarEndpoints = CarEndpoints;

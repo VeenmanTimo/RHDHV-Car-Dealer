@@ -1,4 +1,4 @@
-// source: Backend/Api/Protos/car.proto
+// source: car.proto
 /**
  * @fileoverview
  * @enhanceable
