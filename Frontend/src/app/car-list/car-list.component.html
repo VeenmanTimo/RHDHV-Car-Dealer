@@ -1,14 +1,19 @@
 <div class="container">
-  <form class="row" [formGroup]="searchForm" (submit)="search()">
-    <input
-      class="col form-control"
-      placeholder="Search for a model, make or year"
-      id="input"
-      type="text"
-      formControlName="input"
-    />
-
-    <button class="col btn btn-outline-primary w-100" type="submit">Search</button>
+  <form class="row my-2" [formGroup]="searchForm" (submit)="search()">
+    <div class="col">
+      <input
+        class="form-control"
+        placeholder="Search for a model, make or year"
+        id="input"
+        type="text"
+        formControlName="input"
+      />
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-primary w-100" type="submit">
+        Search
+      </button>
+    </div>
   </form>
 
   <div class="row">

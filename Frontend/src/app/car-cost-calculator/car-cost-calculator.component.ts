@@ -48,6 +48,7 @@ export class CarCostCalculatorComponent {
         totalMaintenanceCost,
         totalFuelCost,
         totalCost,
+        yearlyCost: totalCost / years,
       };
       carCostList.push(breakDown);
     });

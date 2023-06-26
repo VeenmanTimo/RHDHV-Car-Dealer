@@ -1,7 +1,11 @@
 <div class="container">
+  <div class="row text-center">
+    <h1>Price calculator</h1>
+  </div>
   <div class="row">
     <form class="col-3" [formGroup]="inputForm" (submit)="sort()">
-      <label for="montly-distance">Expected montly distance (km)</label>
+      <h3 class="section-heading text-center">Expected values</h3>
+      <label for="montly-distance">Montly distance (km)</label>
       <input
         class="form-control"
         id="montly-distance"
@@ -9,7 +13,7 @@
         formControlName="expectedMontlyDistance"
       />
 
-      <label for="fuel-price">Expected average price of fuel (€/L)</label>
+      <label for="fuel-price">Average price of fuel (€/L)</label>
       <input
         class="form-control"
         id="fuel-price"
@@ -17,7 +21,7 @@
         formControlName="expectedPriceOfFuel"
       />
 
-      <label for="years">Expected years with the car</label>
+      <label for="years">Years with the car</label>
       <input
         class="form-control"
         id="years"
@@ -25,18 +29,14 @@
         formControlName="expectedYears"
       />
 
-      <button class="col btn btn-outline-primary w-100" type="submit">
+      <button class="col btn btn-outline-primary w-100 my-4" type="submit">
         Sort
       </button>
     </form>
     <div class="col-9">
       <div class="row">
-        <div class="col-3 card" *ngFor="let breakDown of sortedCarCosts">
-          <p>{{ breakDown.car.getModel() }} - {{ breakDown.car.getMake() }}</p>
-          <p>{{ breakDown.car.getPrice() | number : "1.2-2" }}</p>
-          <p>{{ breakDown.totalMaintenanceCost | number : "1.2-2" }}</p>
-          <p>{{ breakDown.totalFuelCost | number : "1.2-2" }}</p>
-          <p>{{ breakDown.totalCost | number : "1.2-2" }}</p>
+        <div class="col-3" *ngFor="let breakDown of sortedCarCosts">
+          <app-car-cost-card [costBreakdown]="breakDown" />
         </div>
       </div>
     </div>

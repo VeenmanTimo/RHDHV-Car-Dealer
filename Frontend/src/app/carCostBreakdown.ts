@@ -5,4 +5,5 @@ export interface CarCostBreakdown {
   totalMaintenanceCost: number;
   totalFuelCost: number;
   totalCost: number;
+  yearlyCost: number;
 }

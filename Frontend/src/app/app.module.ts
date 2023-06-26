@@ -10,6 +10,7 @@ import { CarCardComponent } from './car-card/car-card.component';
 import { CarCostCalculatorComponent } from './car-cost-calculator/car-cost-calculator.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CarCostCardComponent } from './car-cost-card/car-cost-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AddCarComponent,
     CarCardComponent,
     CarCostCalculatorComponent,
-    HomePageComponent,    
+    HomePageComponent,
+    CarCostCardComponent,    
   ],
   imports: [
     BrowserModule,

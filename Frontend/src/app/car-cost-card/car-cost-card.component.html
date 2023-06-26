@@ -1,0 +1,28 @@
+<div class="card">
+  <img
+    class="card-img-top"
+    src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  />
+  <div class="card-body" *ngIf="costBreakdown">
+    <h5 class="card-title">
+      {{ costBreakdown.car.getModel() }} {{ costBreakdown.car.getMake() }}
+    </h5>
+    <p>
+      Car price<br />€
+      {{ costBreakdown.car.getPrice() | number : "1.2-2" }}
+    </p>
+    <p>
+      Total maintenance cost<br />€
+      {{ costBreakdown.totalMaintenanceCost | number : "1.2-2" }}
+    </p>
+    <p>
+      Total fuel cost<br />€
+      {{ costBreakdown.totalFuelCost | number : "1.2-2" }}
+    </p>
+    <p>Final cost<br />€ {{ costBreakdown.totalCost | number : "1.2-2" }}</p>
+    <p>
+      <b>Annual cost</b><br />€
+      {{ costBreakdown.yearlyCost | number : "1.2-2" }}
+    </p>
+  </div>
+</div>

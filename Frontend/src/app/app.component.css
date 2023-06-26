@@ -1,0 +1,11 @@
+nav {
+  background-color: slategray;
+  padding: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.25em;
+  padding-right: 1em;
+}

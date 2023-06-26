@@ -1,4 +1,4 @@
-<h2 class="section-heading">Add a new car</h2>
+<h3 class="section-heading text-center">Add a new car</h3>
 <form [formGroup]="createCarForm" (submit)="submit()">
   <label for="model">Model</label>
   <input class="form-control" id="model" type="text" formControlName="model" />
@@ -22,10 +22,10 @@
     formControlName="yearOfRelease"
   />
 
-  <label for="price">Price</label>
+  <label for="price">Price (€)</label>
   <input class="form-control" id="price" type="text" formControlName="price" />
 
-  <label for="fuel-consumption">Fuel consumption</label>
+  <label for="fuel-consumption">Fuel consumption (km/L)</label>
   <input
     class="form-control"
     id="fuel-consumption"
@@ -33,15 +33,17 @@
     formControlName="fuelConsumption"
   />
 
-  <label for="annual-maintenance-cost">Annual maintenance cost</label>
+  <label for="annual-maintenance-cost">Annual maintenance cost (€)</label>
   <input
     class="form-control"
     id="annual-maintenance-cost"
     type="text"
     formControlName="annualMaintenanceCost"
   />
-  
-  <button class="btn btn-outline-primary w-100" type="submit">Add car</button>
 
-  <p>{{ this.carService.createError }}</p>
+  <button class="btn btn-outline-primary w-100 my-4" type="submit">
+    Add car
+  </button>
+
+  <p class="text-center">{{ this.carService.createError }}</p>
 </form>
