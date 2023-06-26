@@ -7,6 +7,7 @@ import {
   GetAllRequest,
   GetAllResponse,
 } from './generated/car_pb';
+import { Subject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,8 @@ export class CarService {
     this.getAll();
   }
 
-  cars: Car[] = [];
+  carList: Car[] = [];
+  cars: Subject<Car[]> = new Subject();
 
   createError: ServiceError | undefined;
 
@@ -28,7 +30,8 @@ export class CarService {
     this.client.getAll(request, (error, response: GetAllResponse | null) => {
       console.log('Error: ' + error);
       console.log(response?.getCarsList());
-      this.cars = response?.getCarsList() ?? [];
+      this.carList = response?.getCarsList() ?? [];
+      this.cars.next(this.carList);
     });
   }
 
@@ -41,7 +44,10 @@ export class CarService {
         if (error) this.createError = error;
         if (response) console.log(response);
         let car = response?.getCar();
-        if (car) this.cars.push(car);
+        if (car) {
+          this.carList.push(car);
+          this.cars.next(this.carList);
+        }
       }
     );
   }

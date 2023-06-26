@@ -1,6 +1,18 @@
 <div class="container">
+  <form class="row" [formGroup]="searchForm" (submit)="search()">
+    <input
+      class="col form-control"
+      placeholder="Search for a model, make or year"
+      id="input"
+      type="text"
+      formControlName="input"
+    />
+
+    <button class="col btn btn-outline-primary w-100" type="submit">Search</button>
+  </form>
+
   <div class="row">
-    <div class="col-3" *ngFor="let car of carService.cars">
+    <div class="col-3" *ngFor="let car of filteredCars">
       <app-car-card [car]="car" />
     </div>
   </div>

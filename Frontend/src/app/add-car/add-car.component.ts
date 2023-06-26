@@ -12,7 +12,7 @@ import { CarService } from '../car.service';
 export class AddCarComponent {
   constructor(public carService: CarService) {}
 
-  applyForm = new FormGroup({
+  createCarForm = new FormGroup({
     model: new FormControl(''),
     make: new FormControl(''),
     version: new FormControl(''),
@@ -23,7 +23,7 @@ export class AddCarComponent {
   });
 
   submit() {
-    var values = this.applyForm.value;
+    var values = this.createCarForm.value;
     var request = new CreateCarRequest();
 
     request.setModel(values.model ?? '');
