@@ -1,3 +1,7 @@
-<div *ngFor="let car of carService.cars">
-  <p>{{ car.getYearOfRelease() }}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3" *ngFor="let car of carService.cars">
+      <app-car-card [car]="car" />
+    </div>
+  </div>
 </div>

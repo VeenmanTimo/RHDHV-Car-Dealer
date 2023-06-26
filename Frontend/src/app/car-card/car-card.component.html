@@ -1,0 +1,43 @@
+<div class="card">
+  <img
+    class="card-img-top"
+    src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ car?.getModel() }} {{ car?.getMake() }}</h5>
+    <table class="card-text">
+      <tbody>
+        <tr>
+          <td>Version</td>
+          <td>
+            {{ car?.getVersion() }}
+          </td>
+        </tr>
+        <tr>
+          <td>Year</td>
+          <td>
+            {{ car?.getYearOfRelease() }}
+          </td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>
+            {{ car?.getPrice() }}
+          </td>
+        </tr>
+        <tr>
+          <td>Consumption</td>
+          <td>
+            {{ car?.getFuelComsumption() }}
+          </td>
+        </tr>
+        <tr>
+          <td>Maintenace cost</td>
+          <td>
+            {{ car?.getAnnualMaintenanceCost() }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
